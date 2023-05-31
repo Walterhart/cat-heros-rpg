@@ -1,3 +1,6 @@
+
+import characterData from './data/data.js'
+
 function getDiceRollArray(diceCount) {
   return new Array(diceCount).fill(0).map(function () {
     return Math.floor(Math.random() * 6) + 1;
@@ -11,21 +14,7 @@ function getDiceHtml(diceCount) {
     .join("");
 }
 
-const hero = {
-  elementId: "hero",
-  name: "Wizard",
-  avatar: "./assets/images/playerwizard.jpg",
-  health: 60,
-  diceCount: 3,
-};
 
-const monster = {
-  elementId: "monster",
-  name: "Evil Knight",
-  avatar: "./assets/images/evilKnight.jpg",
-  health: 10,
-  diceCount: 1,
-};
 
 function Character(data) {
   Object.assign(this, data);
@@ -45,8 +34,8 @@ function Character(data) {
   };
 }
 
-const wizard = new Character(hero);
-const evilKnight = new Character(monster);
+const wizard = new Character(characterData.hero);
+const evilKnight = new Character(characterData.monster);
 
 function render() {
   document.getElementById(wizard.elementId).innerHTML =
