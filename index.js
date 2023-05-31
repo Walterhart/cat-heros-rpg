@@ -1,18 +1,29 @@
+const hero = {
+  elementId: "hero",
+  name: "Wizard",
+  avatar: "./assets/images/playerwizard.jpg",
+  health: 60,
+  diceRoll: 6,
+};
 
-document.getElementById('hero').innerHTML = `
-    <div class="character-card">
-        <h4 class="name"> Wizard </h4>
-        <img class="avatar" src="./assets/images/playerwizard.jpg"/>
-        <p class="health">health: <b> 60 </b></p>
-        <div class="dice-container"><div class="dice"> 6 </div></div>
-    </div>   
-`
+const monster = {
+  elementId: "monster",
+  name: "Evil Knight",
+  avatar: "./assets/images/evilKnight.jpg",
+  health: 10,
+  diceRoll: 4,
+};
 
-document.getElementById('monster').innerHTML = `
-    <div class="character-card">
-        <h4 class="name"> Evil Knight</h4>
-        <img class="avatar" src="./assets/images/evilKnight.jpg"/>
-        <p class="health">health: <b> 10 </b></p>
-        <div class="dice-container"><div class="dice"> 4 </div></div>
-    </div>
-`
+function renderCharacter(characterData) {
+  document.getElementById(
+    characterData.elementId
+  ).innerHTML = `<div class="character-card">
+          <h4 class="name"> ${characterData.name} </h4>
+          <img class="avatar" src="${characterData.avatar}"/>
+          <p class="health">health: <b> ${characterData.health}</b></p>
+          <div class="dice-container"><div class="dice"> ${characterData.diceRoll} </div></div>
+      </div>`;
+}
+
+renderCharacter(hero);
+renderCharacter(monster);
