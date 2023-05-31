@@ -6,10 +6,10 @@ const wizard = new Character(characterData.hero);
 const evilKnight = new Character(characterData.monster);
 
 function render() {
-  document.getElementById(wizard.elementId).innerHTML =
+  document.getElementById('hero').innerHTML =
     wizard.getCharacterHtml();
 
-  document.getElementById(evilKnight.elementId).innerHTML =
+  document.getElementById('monster').innerHTML =
     evilKnight.getCharacterHtml();
 }
 
