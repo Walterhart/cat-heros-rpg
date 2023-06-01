@@ -7,6 +7,9 @@ const evilKnight = new Character(characterData.monster);
 function attack() {
   wizard.getDiceHtml();
   evilKnight.getDiceHtml();
+
+  wizard.takeDamage(evilKnight.currentDiceScore)
+  evilKnight.takeDamage(wizard.currentDiceScore)
   render();
 }
 
