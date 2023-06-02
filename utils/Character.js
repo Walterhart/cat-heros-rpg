@@ -5,20 +5,20 @@ function Character(data) {
 
   this.diceArray = getDicePlaceholderHtml(this.diceCount);
 
-  this.getDiceHtml = function () {
+  this.getDiceHtml =  () => {
     this.currentDiceScore = getDiceRollArray(this.diceCount);
     this.diceArray = this.currentDiceScore
-      .map(function (score) {
+      .map(score =>{
         return `<div class="dice">${score}</div>`;
       })
       .join("");
   };
 
-  this.takeDamage = function (attackScoreAttack) {
-    const totalAttackScore = attackScoreAttack.reduce(function (
+  this.takeDamage = attackScoreAttack => {
+    const totalAttackScore = attackScoreAttack.reduce( (
       totalAttackScore,
       attackScore
-    ) {
+    ) => {
       return totalAttackScore + attackScore;
     });
     this.health -= totalAttackScore;
@@ -29,7 +29,7 @@ function Character(data) {
     }
   };
 
-  this.getCharacterHtml = function () {
+  this.getCharacterHtml = () => {
     const { elementId, name, avatar, health, diceCount, diceArray } = this;
     let diceHtml = this.getDiceHtml(diceCount);
     return `
