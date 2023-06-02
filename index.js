@@ -1,7 +1,8 @@
 import characterData from "./data/data.js";
 import Character from "./utils/Character.js";
 
-function attack() {
+
+const attack = () => {
   wizard.getDiceHtml();
   evilKnight.getDiceHtml();
   wizard.takeDamage(evilKnight.currentDiceScore);
@@ -12,7 +13,7 @@ function attack() {
   }
 }
 
-function endGame() {
+const endGame = () => {
   const endMessage =
     wizard.health === 0 && evilKnight.health === 0
       ? "Both died - no one wins"
@@ -28,7 +29,7 @@ function endGame() {
 }
 document.getElementById("attack-button").addEventListener("click", attack);
 
-function render() {
+const render = () => {
   document.getElementById("hero").innerHTML = wizard.getCharacterHtml();
 
   document.getElementById("monster").innerHTML = evilKnight.getCharacterHtml();

@@ -31,7 +31,7 @@ function Character(data) {
     }
   };
 
-  this.getHealthBarHtml = function () {
+  this.getHealthBarHtml = () => {
     const percent = getPercentage(this.health, this.maxHealth);
 
     return `
