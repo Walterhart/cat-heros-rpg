@@ -12,6 +12,8 @@ class Character {
 
     this.diceArrayHtml = getDicePlaceholderHtml(this.diceCount);
   }
+
+  // Set the HTML representation of the character's dice rolls
   setDiceHtml = () => {
     this.currentDiceScore = getDiceRollArray(this.diceCount);
     this.diceArrayHtml = this.currentDiceScore
@@ -21,6 +23,7 @@ class Character {
       .join("");
   };
 
+  // Reduce character's health based on the attack score
   takeDamage = (attackScoreAttack) => {
     const totalAttackScore = attackScoreAttack.reduce(
       (totalAttackScore, attackScore) => {
@@ -35,6 +38,7 @@ class Character {
     }
   };
 
+  // Get the HTML representation of the character's health bar
   getHealthBarHtml = () => {
     const percent = getPercentage(this.health, this.maxHealth);
 
@@ -46,6 +50,7 @@ class Character {
     </div>`;
   };
 
+  // Get the HTML representation of the character
   getCharacterHtml = () => {
     const { elementId, name, avatar, health, diceArrayHtml } = this;
     const healthBar = this.getHealthBarHtml();
