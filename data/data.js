@@ -7,11 +7,18 @@ const characterData = {
     currentDiceScore: [],
   },
 
-  monster: {
+  evilKnight: {
     name: "Evil Knight",
     avatar: "./assets/images/evilKnight.jpg",
     health: 30,
     diceCount: 1,
+    currentDiceScore: [],
+  },
+  evilFighter: {
+    name: "Evil Fighter",
+    avatar: "./assets/images/evilFighter.png",
+    health: 20,
+    diceCount: 2,
     currentDiceScore: [],
   },
 };
