@@ -2,32 +2,39 @@ import characterData from "./data/data.js";
 import Character from "./utils/Character.js";
 
 let monstersArray = ["evilKnight", "evilFighter"];
+let isWaiting = false;
 
 const getNewMonster = () => {
   const nextMonsterData = characterData[monstersArray.shift()];
   return nextMonsterData ? new Character(nextMonsterData) : {};
 };
-
 const attack = () => {
-  wizard.getDiceHtml();
-  monster.getDiceHtml();
-  wizard.takeDamage(monster.currentDiceScore);
-  monster.takeDamage(wizard.currentDiceScore);
-  render();
+  if (!isWaiting) {
+    wizard.getDiceHtml();
+    monster.getDiceHtml();
+    wizard.takeDamage(monster.currentDiceScore);
+    monster.takeDamage(wizard.currentDiceScore);
+    render();
 
-  if (wizard.dead) {
-    endGame();
-  } else if (monster.dead) {
-    if (monstersArray.length > 0) {
-      monster = getNewMonster();
-      render();
-    } else {
+    if (wizard.dead) {
       endGame();
+    } else if (monster.dead) {
+      isWaiting = true;
+      if (monstersArray.length > 0) {
+        setTimeout(() => {
+          monster = getNewMonster();
+          render();
+          isWaiting = false;
+        }, 1500);
+      } else {
+        endGame();
+      }
     }
   }
 };
 
 const endGame = () => {
+  isWaiting = true;
   const endMessage =
     wizard.health === 0 && monster.health === 0
       ? "Both died - no one wins"
