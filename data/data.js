@@ -10,7 +10,7 @@ const characterData = {
   monster: {
     name: "Evil Knight",
     avatar: "./assets/images/evilKnight.jpg",
-    health: 10,
+    health: 30,
     diceCount: 1,
     currentDiceScore: [],
   },
