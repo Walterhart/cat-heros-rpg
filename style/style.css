@@ -10,8 +10,7 @@ html,
 body {
   padding: 0;
   margin: 0;
-  background: url("../assets/images/blueTorchBackground.png") center/cover
-    no-repeat;
+  background: url("../assets/images/blueTorchBackground.png") center/100% 100% ;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -42,7 +41,7 @@ main {
 /* Character card styles */
 .character-card {
   margin-top: 0.5rem;
-  width: 94%;
+  width: 95%;
   height: 30rem;
   max-width: 23rem;
   padding: 1rem 1rem;
@@ -60,7 +59,7 @@ main {
 
 @media (min-width: 550px) {
   .character-card {
-    height: 50rem;
+    height: 45rem;
     width: 37rem;
   }
 }
