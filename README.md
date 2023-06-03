@@ -3,6 +3,8 @@
 
 The Heros Cat Heros RPG Game is a simple web-based game where a hero battles against various evil monsters. The game allows the player to attack monsters using dice rolls and calculates the health points of the hero and monsters accordingly. The game ends when either the hero or all the monsters are defeated.
 
+## Preview
+![Cat Hero Demo ](assets/images/demo.gif)
 ## Technologies Used
 
 - HTML
