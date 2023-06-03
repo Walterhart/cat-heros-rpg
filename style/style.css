@@ -121,6 +121,16 @@ main {
 
 .health-bar-outer .health-bar-inner.danger {
   background: #d1435f;
+  animation: glowingEffect 1.5s infinite;
+}
+
+@keyframes glowingEffect {
+  0%, 100% {
+    box-shadow: 0 0 10px 5px rgba(209, 67, 95, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 10px 5px rgba(209, 67, 95, 0.8);
+  }
 }
 
 /* Dice container styles */
