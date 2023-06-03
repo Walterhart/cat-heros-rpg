@@ -207,16 +207,19 @@ button:focus {
 
 /* End game styles */
 .end-game {
-    margin-top: 25%;
-    text-align: center;
-    background-color: #231d24;
-    border-radius: 1rem;
-    padding: 2rem;
-    box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.3);
-    max-width: 37.5rem;
-    width: 90%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  background-color: #231d24;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.3);
+  max-width: 37.5rem;
+  width: 90%;
 }
 
 .end-emoji {
-  font-size: 80px;
+  font-size: 5rem;
 }
